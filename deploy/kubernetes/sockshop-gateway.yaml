@@ -1,0 +1,30 @@
+apiVersion: networking.istio.io/v1beta1
+kind: Gateway
+metadata:
+  name: sock-shop
+spec:
+  selector:
+    istio: ingressgateway
+  servers:
+  - hosts:
+    - '*'
+    port:  # 外部からのIstio IngressGatewayへのアクセスについての定義を記述
+      name: http
+      number: 80
+      protocol: HTTP
+---
+apiVersion: networking.istio.io/v1beta1
+kind: VirtualService
+metadata:
+  name: sock-shop
+spec:
+  gateways:
+  - sock-shop    # 上記の対象Gatewayリソース名
+  hosts:
+  - '*'
+  http:
+  - route:
+    - destination:      # このリソースが受けたトラフィックをどのServiceへ転送するかを指定(これがNodePortは不要だけどServiceが必要と書いた部分)
+        host: front-end
+        port:
+          number: 80
