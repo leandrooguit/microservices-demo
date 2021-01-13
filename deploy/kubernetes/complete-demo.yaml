@@ -1,16 +1,16 @@
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: carts-db
   labels:
-    name: carts-db
+    app: carts-db
   namespace: sock-shop
 spec:
   replicas: 1
   template:
     metadata:
       labels:
-        name: carts-db
+        app: carts-db
     spec:
       containers:
       - name: carts-db
@@ -52,19 +52,19 @@ spec:
   selector:
     name: carts-db
 ---
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: carts
   labels:
-    name: carts
+    app: carts
   namespace: sock-shop
 spec:
   replicas: 1
   template:
     metadata:
       labels:
-        name: carts
+        app: carts
     spec:
       containers:
       - name: carts
@@ -110,19 +110,19 @@ spec:
   selector:
     name: carts
 ---
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: catalogue-db
   labels:
-    name: catalogue-db
+    app: catalogue-db
   namespace: sock-shop
 spec:
   replicas: 1
   template:
     metadata:
       labels:
-        name: catalogue-db
+        app: catalogue-db
     spec:
       containers:
       - name: catalogue-db
@@ -153,19 +153,19 @@ spec:
   selector:
     name: catalogue-db
 ---
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: catalogue
   labels:
-    name: catalogue
+    app: catalogue
   namespace: sock-shop
 spec:
   replicas: 1
   template:
     metadata:
       labels:
-        name: catalogue
+        app: catalogue
     spec:
       containers:
       - name: catalogue
@@ -199,7 +199,7 @@ spec:
   selector:
     name: catalogue
 ---
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: front-end
@@ -209,7 +209,7 @@ spec:
   template:
     metadata:
       labels:
-        name: front-end
+        app: front-end
     spec:
       containers:
       - name: front-end
@@ -246,19 +246,19 @@ spec:
   selector:
     name: front-end
 ---
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1'
 kind: Deployment
 metadata:
   name: orders-db
   labels:
-    name: orders-db
+    app: orders-db
   namespace: sock-shop
 spec:
   replicas: 1
   template:
     metadata:
       labels:
-        name: orders-db
+        app: orders-db
     spec:
       containers:
       - name: orders-db
@@ -300,19 +300,19 @@ spec:
   selector:
     name: orders-db
 ---
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: orders
   labels:
-    name: orders
+    app: orders
   namespace: sock-shop
 spec:
   replicas: 1
   template:
     metadata:
       labels:
-        name: orders
+        app: orders
     spec:
       containers:
       - name: orders
@@ -358,19 +358,19 @@ spec:
   selector:
     name: orders
 ---
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: payment
   labels:
-    name: payment
+    app: payment
   namespace: sock-shop
 spec:
   replicas: 1
   template:
     metadata:
       labels:
-        name: payment
+        app: payment
     spec:
       containers:
       - name: payment
@@ -404,19 +404,19 @@ spec:
   selector:
     name: payment
 ---
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: queue-master
   labels:
-    name: queue-master
+    app: queue-master
   namespace: sock-shop
 spec:
   replicas: 1
   template:
     metadata:
       labels:
-        name: queue-master
+        app: queue-master
     spec:
       containers:
       - name: queue-master
@@ -443,19 +443,19 @@ spec:
   selector:
     name: queue-master
 ---
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: rabbitmq
   labels:
-    name: rabbitmq
+    app: rabbitmq
   namespace: sock-shop
 spec:
   replicas: 1
   template:
     metadata:
       labels:
-        name: rabbitmq
+        app: rabbitmq
     spec:
       containers:
       - name: rabbitmq
@@ -490,19 +490,19 @@ spec:
   selector:
     name: rabbitmq
 ---
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: shipping
   labels:
-    name: shipping
+    app: shipping
   namespace: sock-shop
 spec:
   replicas: 1
   template:
     metadata:
       labels:
-        name: shipping
+        app: shipping
     spec:
       containers:
       - name: shipping
@@ -548,19 +548,19 @@ spec:
   selector:
     name: shipping
 ---
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: user-db
   labels:
-    name: user-db
+    app: user-db
   namespace: sock-shop
 spec:
   replicas: 1
   template:
     metadata:
       labels:
-        name: user-db
+        app: user-db
     spec:
       containers:
       - name: user-db
@@ -602,19 +602,19 @@ spec:
   selector:
     name: user-db
 ---
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: user
   labels:
-    name: user
+    app: user
   namespace: sock-shop
 spec:
   replicas: 1
   template:
     metadata:
       labels:
-        name: user
+        app: user
     spec:
       containers:
       - name: user
