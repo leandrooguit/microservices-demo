@@ -1,4 +1,4 @@
-apiVersion: networking.k8s.io/v1beta1
+apiVersion: networking.k8s.io/v1
 kind: Gateway
 metadata:
   name: sock-shop
@@ -13,7 +13,7 @@ spec:
       number: 80
       protocol: HTTP
 ---
-apiVersion: networking.k8s.io/v1beta1
+apiVersion: networking.k8s.io/v1
 kind: VirtualService
 metadata:
   name: sock-shop
